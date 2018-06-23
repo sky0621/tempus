@@ -60,3 +60,14 @@ $ gcloud container clusters get-credentials {my cluster name} --zone=asia-northe
 
 $ sudo docker tag sky0621/tempus:v0.1 gcr.io/$PROJECT_ID/tempus:v0.1
 
+$ gcloud docker -- push gcr.io/$PROJECT_ID/tempus:v0.1
+
+$ gsutil ls -R gs://artifacts.*
+
+## deploy
+
+$ kubectl create -f tempus-deployment.yaml 
+deployment "tempus" created
+
+$ kubectl delete deployment tempus
+deployment "tempus" deleted

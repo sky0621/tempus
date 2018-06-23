@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: tempus
+  name: tempus
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: tempus
+    spec:
+      containers:
+      - image: grc.io/<PROJECT ID>/tempus:v0.1
+        name: tempus
