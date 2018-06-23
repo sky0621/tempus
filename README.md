@@ -2,7 +2,10 @@
 
 ## docker
 
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
 $ sudo docker version
+
 Client:
  Version:      18.03.1-ce
  API version:  1.37
@@ -25,8 +28,35 @@ Server:
 
 ## docker build
 
-sudo docker build -t sky0621dhub/tempus:0.1 .
+$ sudo docker build -t sky0621/tempus:v0.1 .
 
 ## docker run
 
-sudo docker run sky0621dhub/tempus:0.1
+$ sudo docker run sky0621/tempus:v0.1
+
+## GCP Cloud SDK
+
+https://cloud.google.com/sdk/docs/
+
+https://cloud.google.com/sdk/docs/components
+
+## gcloud and kubectl setup
+
+$ gcloud init
+
+$ gcloud auth list
+
+$ gcloud info
+
+$ gcloud components list
+
+$ gcloud components update
+
+$ gcloud components install kubectl
+
+$ gcloud container clusters get-credentials {my cluster name} --zone=asia-northeast1-a
+
+## to gcr
+
+$ sudo docker tag sky0621/tempus:v0.1 gcr.io/$PROJECT_ID/tempus:v0.1
+
