@@ -28,11 +28,11 @@ Server:
 
 ## docker build
 
-$ sudo docker build -t sky0621/tempus:v0.1 .
+$ sudo docker build -t sky0621/tempus:v0.4 .
 
 ## docker run
 
-$ sudo docker run sky0621/tempus:v0.1
+$ sudo docker run sky0621/tempus:v0.4
 
 ## GCP Cloud SDK
 
@@ -54,20 +54,22 @@ $ gcloud components update
 
 $ gcloud components install kubectl
 
-$ gcloud container clusters get-credentials {my cluster name} --zone=asia-northeast1-a
+$ gcloud container clusters get-credentials fs-work-14 --zone=asia-northeast1-a
 
 ## to gcr
 
-$ sudo docker tag sky0621/tempus:v0.1 gcr.io/$PROJECT_ID/tempus:v0.1
+$ sudo docker tag sky0621/tempus:v0.4 gcr.io/$PROJECT_ID/tempus:v0.4
 
-$ gcloud docker -- push gcr.io/$PROJECT_ID/tempus:v0.1
+$ gcloud docker -- push gcr.io/$PROJECT_ID/tempus:v0.4
 
 $ gsutil ls -R gs://artifacts.*
 
 ## deploy
 
-$ kubectl create -f tempus-deployment.yaml 
+$ kubectl create -f tempus-deployment.yaml
 deployment "tempus" created
+
+$ kubectl get pods
 
 $ kubectl delete deployment tempus
 deployment "tempus" deleted

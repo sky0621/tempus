@@ -5,12 +5,12 @@ metadata:
     name: tempus
   name: tempus
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
         name: tempus
     spec:
       containers:
-      - image: grc.io/<PROJECT ID>/tempus:v0.1
+      - image: gcr.io/<My Project ID>/tempus:v0.4
         name: tempus
